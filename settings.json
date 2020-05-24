@@ -1,0 +1,8 @@
+{
+  "Auth": {
+    "Domain": "jxgxmx.eu.auth0.com",
+    "Authority": "https://jxgxmx.eu.auth0.com",
+    "ClientId": "acLu3ZK4FjQdNY4GBHX4ik3V7cgenDSO",
+    "Audience": "https://localhost:5001/api"
+  }
+}

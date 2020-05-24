@@ -1,22 +1,23 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router';
-import { Layout } from './components/Layout';
-import { Home } from './components/Home';
-import { FetchData } from './components/FetchData';
-import { Counter } from './components/Counter';
+// src/App.js
 
-import './custom.css'
+import React from "react";
+import NavBar from "./components/NavBar";
+import { useAuth0 } from "./react-auth0-spa";
 
-export default class App extends Component {
-  static displayName = App.name;
+function App() {
+  const { loading } = useAuth0();
 
-  render () {
-    return (
-      <Layout>
-        <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
-        <Route path='/fetch-data' component={FetchData} />
-      </Layout>
-    );
+  if (loading) {
+    return <div>Loading...</div>;
   }
+
+  return (
+    <div className="App">
+      <header>
+        <NavBar />
+      </header>
+    </div>
+  );
 }
+
+export default App;
